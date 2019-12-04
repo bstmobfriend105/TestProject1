@@ -2,7 +2,7 @@
 
 1. Install all packages:
 
-$ cd MyTestProject
+$ cd TestProject1
 $ npm install
 
 2. Edit blacklist.js file at node_modules\metro-config\src\defaults:
