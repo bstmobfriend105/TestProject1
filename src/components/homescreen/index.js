@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, Button } from 'react-native'
+import { View, StatusBar, StyleSheet } from 'react-native'
 import StatusCards from './statusCards'
 import ToDoCards from './toDoCards'
 import DealCards from './dealCards'
@@ -12,6 +12,7 @@ class HomeScreen extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.backView}>
+        <StatusBar  hidden />
         <StatusCards />
         <ToDoCards />
         <DealCards navigate={navigate}/>
