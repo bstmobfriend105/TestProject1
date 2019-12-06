@@ -24,8 +24,8 @@ class ProfileScreen extends Component {
       header: (
       <View
           style={{
-            height: 60,
-            marginTop: 10,
+            height: 110,
+            paddingTop: 40,
             backgroundColor: 'white',
             justifyContent: 'flex-start',
             flexDirection: 'row'
@@ -61,7 +61,7 @@ class ProfileScreen extends Component {
   render() {
     return (
       <View style={styles.backView}>
-        <Text style={comStyles.cardTitle}>Things to do</Text>
+        <Text style={styles.cardTitle}>Things to do</Text>
         <SwipeableList style={styles.list} data={toDoData} />
     </View>
     );
@@ -72,6 +72,11 @@ const styles = StyleSheet.create ({
   backView: {
     flex: 1,
     backgroundColor: '#ddeeff'
+  },
+  cardTitle: {
+    marginTop: 20,
+    marginLeft: '10%',
+    color: 'grey'
   },
   list: {
     marginLeft: 10,

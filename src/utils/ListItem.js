@@ -103,11 +103,11 @@ const styles = StyleSheet.create({
     height: 60,
     marginLeft: 100,
     backgroundColor: 'white',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     flexDirection: 'row'
   },
   innerImage: {
-    marginLeft: 60,
+    marginLeft: 10,
     marginTop: 5,
     marginBottom: 5,
     width: 50,

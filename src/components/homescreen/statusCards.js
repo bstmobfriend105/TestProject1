@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Dimensions } from 'react-native'
 import CustomCarousel from '../../utils/customCarousel'
 import comStyles from '../../utils/commonStyles'
 
@@ -17,7 +17,7 @@ class StatusCards extends Component {
 
   render() {
     return (
-      <View style={comStyles.backView}>
+      <View style={styles.backView}>
         <Text style={comStyles.cardTitle}>How you're doing</Text>
         <CustomCarousel cardData={statusData}/>
       </View>
@@ -26,9 +26,10 @@ class StatusCards extends Component {
   }
 }
 
+const { height } = Dimensions.get('window')
 const styles = StyleSheet.create({
   backView: {
-    marginTop: 50
+    marginTop: height*0.06,
   },
   cardTitle: {
     marginLeft: 30,

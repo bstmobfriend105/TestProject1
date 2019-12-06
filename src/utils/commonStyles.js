@@ -1,8 +1,9 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
 
+const { height } = Dimensions.get('window')
 const styles = StyleSheet.create({
     backView: {
-      marginTop: 20
+      marginTop: height * 0.05,
     },
     cardTitle: {
       marginLeft: '10%',

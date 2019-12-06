@@ -12,10 +12,17 @@ export default class CustomCarousel extends Component {
 
     this.props = props
     this.state = {
-      cardData: this.props.cardData
+      cardData: this.props.cardData,
+      loading: true
     }
     
     this._carousel = {}
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ loading: false})
+    }, 10)
   }
     _renderItem = ( {item, index} ) => {
         return (
@@ -37,16 +44,19 @@ export default class CustomCarousel extends Component {
     render () {
       const sliderWidth = width
       const itemWidth = width * 0.8
-        return (
-            <Carousel
-              ref={(c) => { this._carousel = c; }}
-              data={this.state.cardData}
-              renderItem={this._renderItem.bind(this)}
-              sliderWidth={sliderWidth}
-              itemWidth={itemWidth}
-              layout={'default'} 
-            />
-        );
+      if (this.state.loading) {
+        return null
+      }
+      return (
+          <Carousel
+            ref={(c) => { this._carousel = c; }}
+            data={this.state.cardData}
+            renderItem={this._renderItem.bind(this)}
+            sliderWidth={sliderWidth}
+            itemWidth={itemWidth}
+            layout={'default'} 
+          />
+      );
     }
 }
 
