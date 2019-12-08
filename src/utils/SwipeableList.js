@@ -54,7 +54,7 @@ export default class SwipeableList extends Component {
       <View>
         <Badge
           value={this.state.data.length}
-          containerStyle={{ position: 'absolute', top: -19, left: 120 }}
+          containerStyle={{ position: 'absolute', top: -19, left: 125 }}
         />
       <FlatList
         style={this.props.style}
