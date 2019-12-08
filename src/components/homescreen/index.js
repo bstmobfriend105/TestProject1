@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
-import { View, StatusBar, StyleSheet } from 'react-native'
+import { YellowBox, SafeAreaView, ScrollView, StatusBar, StyleSheet } from 'react-native'
 import StatusCards from './statusCards'
 import ToDoCards from './toDoCards'
 import DealCards from './dealCards'
+
+YellowBox.ignoreWarnings([
+  'VirtualizedLists should never be nested', // TODO: Remove when fixed
+])
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -11,12 +15,14 @@ class HomeScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.backView}>
+      <SafeAreaView style={styles.backView}>
         <StatusBar  hidden />
         <StatusCards />
-        <ToDoCards />
-        <DealCards navigate={navigate}/>
-      </View>
+        <ScrollView style={styles.scrollView}>
+          <ToDoCards />
+          <DealCards navigate={navigate}/>
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 }
@@ -25,6 +31,9 @@ const styles = StyleSheet.create({
   backView: {
     flex: 1,
     backgroundColor: '#ddeeff'
+  },
+  scrollView: {
+    backgroundColor: 'transparent'
   },
   cardTitle: {
     marginLeft: 30,
